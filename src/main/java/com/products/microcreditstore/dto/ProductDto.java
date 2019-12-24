@@ -3,6 +3,9 @@ package com.products.microcreditstore.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * The type Product dto.
+ */
 @Setter
 @Getter
 public class ProductDto {
@@ -11,5 +14,5 @@ public class ProductDto {
     private Integer availableQty;
     private Double price;
     private String description;
-    private Double totalAmount; 
+    private Double totalAmount;
 }

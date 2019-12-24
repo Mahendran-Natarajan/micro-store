@@ -13,9 +13,12 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 public class ApiResponse {
+    /**
+     * The Order.
+     */
+    OrdersDto order;
     private String message;
     private int statusCode;
     private List<ProductDto> productDtos;
     private List<OrdersDto> orders;
-    OrdersDto order;
 }

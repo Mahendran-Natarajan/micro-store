@@ -4,6 +4,9 @@ import lombok.Data;
 
 import javax.persistence.*;
 
+/**
+ * The Product.
+ */
 @Table
 @Entity(name = "product")
 @Data
