@@ -73,6 +73,8 @@ public class ProductServiceImpl implements ProductService {
             if (productOptional.isPresent()) {
                 Product product = productOptional.get();
                 productDto.setPrice(product.getPrice());
+                productDto.setName(product.getName());
+                productDto.setDescription(product.getDescription());
                 totalCost = productDto.getAvailableQty() * product.getPrice();
                 productDto.setTotalAmount(totalCost);
             }

@@ -28,6 +28,7 @@ public class ProductController {
     @Autowired
     RestTemplate restTemplate;
     private Logger logger = LoggerFactory.getLogger(ProductController.class);
+
     @Autowired
     private ProductServiceImpl productService;
 
@@ -78,9 +79,9 @@ public class ProductController {
             if (!creditCardEntity.getCvv().equals(buyProductDto.getCvvNumber())) {
                 throw new CustomException("CVV not is not matched");
             }
-            if (!creditCardEntity.getExpiryDate().isAfter(buyProductDto.getExpiryDate())) {
-                throw new CustomException("Card is expired");
-            }
+            if (!buyProductDto.getExpiryDate().isEqual(creditCardEntity.getExpiryDate())) {
+                throw new CustomException("expire date is not matched");
+           }
         }
         if (creditCardEntity.getBalance() > amount) {
             logger.info("Place an order");
